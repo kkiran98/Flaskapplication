@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+
+    <h1>Login</h1>
+
+    <form id="login-form" method="post" action="{{ url_for('login') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // Handle login form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            // Fetch login credentials
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Make an HTTP request to Flask backend
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to index.html on successful login
+                    window.location.href = '/index';
+                } else {
+                    throw new Error('Login failed');
+                }
+            })
+            .catch(error => console.error('Error during login:', error));
+        });
+    </script>
+    
+</body>
+</html>
+
