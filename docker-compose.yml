@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  flaskapp:
+    container_name: flaskapp
+    build: ./
+    ports:
+      - "8010:8010"
+
+
