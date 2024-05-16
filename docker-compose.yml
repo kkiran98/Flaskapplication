@@ -3,6 +3,7 @@ services:
   flaskapp:
     container_name: flaskapp
     build: ./app
+    image: kiranrepository2023/flaskapp:v1
     ports:
       - "8010:8010"
 
