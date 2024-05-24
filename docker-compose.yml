@@ -1,14 +1,12 @@
 version: "3.3"
 services:
   flaskapp:
-    container_name: flaskapp
     build: ./app
     image: kiranrepository2023/flaskapp:latest
     ports:
       - "8030:8010"
 
   flaskapp1:
-    container_name: flaskapp1
     build: ./app
     image: kiranrepository2023/flaskapp:latest
     ports:
