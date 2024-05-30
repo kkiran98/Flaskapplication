@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: ftapp
-        image: kiranrepository2023/flaskapp:v1 
+        image: kiranrepository2023/flaskapp:v60 
         ports:
         - containerPort: 8010
       imagePullSecrets:
