@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the input file in the current directory
-input_file="./fronttest.yaml"
+input_file="./frontenddeploy.yaml"
 
 # Use sed to find and replace the targetPort value
 sed -i 's/targetPort: 8010/targetPort: 8050/' "$input_file"
