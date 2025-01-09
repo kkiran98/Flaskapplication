@@ -4,13 +4,11 @@ metadata:
   name: flaskapp-svc
   namespace: flask
 spec:
-  type: NodePort
   selector:
     role: flask
   ports:
     - port: 8010
       targetPort: 8010
-      nodePort: 30080
       protocol: TCP
 
 
